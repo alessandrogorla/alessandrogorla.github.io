@@ -65,7 +65,7 @@ const ProjectModalHeader = ({
                }}
             >
                <Calendar size={11} style={{ flexShrink: 0 }} />
-               {project.date}
+               {project.date} - {project.organization}
             </span>
             {project.team && (
                <span

@@ -98,7 +98,6 @@
          "date": "2024",
          "tools_tech": [
             "Python",
-            "FEniCS",
             "Proper Orthogonal Decomposition (POD)",
             "Neural Networks (POD-NN)",
             "Singular Value Decomposition (SVD)"
@@ -121,7 +120,6 @@
          "date": "2024",
          "tools_tech": [
             "Python",
-            "FEniCS",
             "Proper Orthogonal Decomposition (POD)",
             "Galerkin Projection",
             "Singular Value Decomposition (SVD)"
@@ -180,14 +178,14 @@
             "Incorporated an ultrasonic sensor with an Arduino and Bluetooth module to automate the motor limits based on the gripper's opening distance and enable remote control"
          ],
          "github": "",
-         "live": "https://pippo.com",
+         "live": "",
          "organization": "Aarhus University, Denmark"
    },
    {
          "id": 108,
          "title": "Comparative Life Cycle Assessment of Aluminium and Carbon Fiber Bike Frames",
          "description": "A comparative Life Cycle Assessment (LCA) investigating the cradle-to-grave environmental impacts of aluminium versus carbon fiber bicycle frames. The study evaluates energy consumption and Global Warming Potential (GWP) across raw material extraction, manufacturing, use, and end-of-life (EoL) phases, providing actionable insights for sustainable material selection in the cycling industry.",
-         "date": "2023",
+         "date": "2025",
          "tools_tech": [
             "Life Cycle Assessment (LCA)",
             "EcoInvent & GaBi Databases",
@@ -205,6 +203,56 @@
          "github": "",
          "live": "",
          "organization": "Aarhus University, Denmark"
+},
+{
+         "id": 109,
+         "title": "Automated Robotic Testing System for Modular Helmets",
+         "description": "An engineered automated testing system developed for the Innovative Applications of Industrial Robotics lab. The project integrates custom 3D-printed hardware, a servomotor-driven end-effectors, computer vision, and Python-based path planning to securely manipulate and test a modular motorcycle helmet.",
+         "date": "2025",
+         "tools_tech": [
+            "Python",
+            "SolidWorks",
+            "3D Printing (PLA)",
+            "TMFlow Vision Job",
+            "Servomotor-driven Gripper",
+            "Industrial Robotic Arm",
+            "Computer Vision for State Verification",
+            "Automatic Fatigue Testing of Modular Helmets"
+         ],
+         "features": [
+            "Engineered a custom 3D-printed helmet support base (230x285x183 mm) with an internal locking device using opposite-threaded M12 screws for rigid three-point securing.",
+            "Designed and fabricated a custom servomotor-driven rack-and-pinion end-effector (117x88x88 mm) in SolidWorks to interact with the chin guard release mechanism and manipulate the visor.",
+            "Developed a robust Python software architecture featuring real-time UI updates, cycle counting, and complete sequence adaptability regardless of the helmet size.",
+            "Integrated TMFlow Vision Job using color markers for state verification, allowing the robot to automatically detect faults and halt motion sequences to ensure operational safety."
+         ],
+         "github": "",
+         "live": "",
+         "organization": "Politecnico di Milano"
+},
+{
+         "id": 110,
+         "title": "Project Management: Construction of a 40MW Solar Power Plant",
+         "description": "A comprehensive project management framework developed for the Engineering, Procurement, and Construction (EPC) of a 40MW photovoltaic (PV) solar power plant spanning 78 hectares in Turi (BA), Italy. The project encompasses site preparation, civil works, electrical installation, SCADA integration, and grid interconnection, delivering a sustainable energy solution for Enel Green Power S.P.A.",
+         "date": "2025",
+         "tools_tech": [
+            "Microsoft Project",
+            "Microsoft Excel",
+            "Bottom-Up Cost Estimation",
+
+            "Work Breakdown Structure (WBS) Development",
+            "Risk and Opportunity Management",
+            "Earned Value Management (EVM)"
+         ],
+         "features": [
+            "Managed the full EPC realization of a 40MW solar PV plant across 78 hectares, coordinating site preparation, electrical wiring, and final grid synchronization.",
+            "Structured the project using Deliverable, Organizational, and Process-based Work Breakdown Structures (WBS), tracking progress across 95 detailed Work Packages.",
+            "Performed bottom-up cost estimation to manage a €48 million budget, successfully securing a net profit of over €3.7 million by optimizing the PMO contingency fund.",
+            "Applied the Precedence Diagram Method (PDM) in Microsoft Project to sequence tasks, resolve resource overallocations, and adhere to a strict 24-month delivery timeline.",
+            "Designed a hybrid risk and opportunity management system to mitigate supplier delays, transfer defect risks, and exploit local workforce availability for cost avoidance."
+         ],
+         "github": "",
+         "live": "",
+         "organization": "Politecnico di Milano"
 }
    ]
 }

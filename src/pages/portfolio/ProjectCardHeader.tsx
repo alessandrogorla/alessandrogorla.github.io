@@ -51,7 +51,7 @@ const ProjectCardHeader = ({
                   }}
                >
                   <Calendar size={10} style={{ flexShrink: 0 }} />
-                  {data.date}
+                  {data.date} - {data.organization}
                </span>
                {data.team && (
                   <span

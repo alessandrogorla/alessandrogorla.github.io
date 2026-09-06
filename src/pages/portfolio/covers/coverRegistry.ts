@@ -26,6 +26,10 @@ import LinearElasticity from "@assets/projects/FOMROMDIFF.png";
 import BlindAssistDevice from "@assets/projects/Mechatronics.png";
 import Robotics from "@assets/projects/robotics.jpg";
 import LCA from "@assets/projects/LCA.png";
+import helmet from "@assets/projects/helmet.png";
+import PVP from "@assets/projects/PVP.png";
+
+
 export interface SceneCoverProps {
    tint: string;
    variant?: string;
@@ -117,6 +121,8 @@ const COVER_BY_ID: Record<number, ProjectCover> = {
    106: { kind: "image", src: BlindAssistDevice }, // Blind Assist Device 
    107: { kind: "image", src: Robotics }, // Robotics
    108: { kind: "image", src: LCA }, // Life Cycle Assessment
+   109: { kind: "image", src: helmet }, // Helmet Design
+   110: { kind: "image", src: PVP }, // PVP Design
 };
 
 export const getProjectCover = (
