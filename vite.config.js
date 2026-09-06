@@ -5,7 +5,7 @@ import { fileURLToPath } from "node:url";
 
 export default defineConfig(() => ({
    plugins: [tailwindcss(), react()],
-   base: "/portfolio-react/",
+   base: "/",
    resolve: {
       alias: {
          "@": fileURLToPath(new URL("./src", import.meta.url)),
