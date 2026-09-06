@@ -20,8 +20,8 @@
             "Strict compliance with the CEI EN 60601-1 standard for electromedical devices, guaranteed through material safety calculations and finite element simulations (Von Mises)",
             "Effective economic savings of 20% on the product (equal to €229.11) achieved by both reducing components and streamlining assembly times for a total of 19 minutes saved"
          ],
-         "github": "",
-         "live": "",
+         "github": "https://github.com/alessandrogorla/alessandrogorla.github.io/tree/789de1af952a29fb71db1732b73961a927477968/Projects/Bachelor_Thesis",
+         "live": "https://github.com/alessandrogorla/alessandrogorla.github.io/blob/789de1af952a29fb71db1732b73961a927477968/Projects/Bachelor_Thesis/Report_tecnico.pdf",
          "organization": "Politecnico di Milano "
       },
       {
@@ -43,8 +43,8 @@
             "Extracted the first four natural frequencies (ranging from 13.71 Hz to 81.08 Hz in the healthy state) and reconstructed mode shapes using SVD applied frequency by frequency",
             "Computed MAC values to rigorously compare mode shapes across conditions and estimated damping ratios using the Half Peak Power method, establishing a baseline for automated fault detection"
          ],
-         "github": "",
-         "live": "",
+         "github": "https://github.com/alessandrogorla/alessandrogorla.github.io/tree/789de1af952a29fb71db1732b73961a927477968/Projects/Operational_Modal_Analysis_Tie-rods",
+         "live": "https://github.com/alessandrogorla/alessandrogorla.github.io/blob/789de1af952a29fb71db1732b73961a927477968/Projects/Operational_Modal_Analysis_Tie-rods/WorkProject_Group13_pdf.pdf",
          "organization": "Politecnico di Milano"
       },
       {
@@ -65,8 +65,8 @@
             "Successfully extracted modal parameters, identifying the first two natural frequencies at 667.3 Hz and 1625 Hz, with corresponding modal damping values of 0.008 and 0.006 ",
             "Reconstructed the first and second axial mode shapes by evaluating the imaginary part of the FRFs at the resonant frequencies, applying spline interpolation to ensure curve continuity "
          ],
-         "github": "",
-         "live": "",
+         "github": "https://github.com/alessandrogorla/alessandrogorla.github.io/tree/789de1af952a29fb71db1732b73961a927477968/Projects/Operational%20Modal%20Analysis%20of%20a%20Rail%20Wheel",
+         "live": "https://github.com/alessandrogorla/alessandrogorla.github.io/blob/789de1af952a29fb71db1732b73961a927477968/Projects/Operational%20Modal%20Analysis%20of%20a%20Rail%20Wheel/RailWheel.pdf",
          "organization": "Politecnico di Milano "
       },
       {
@@ -87,8 +87,8 @@
             "Validated the structural analysis by comparing the FRF obtained via the full FE model with a modal superposition approach that successfully approximated the resonance peaks",
             "Evaluated static response, finding a maximum static deflection of 53.6 mm, and simulated the dynamic time-history response to a 1000 N moving load with a specific velocity profile"
          ],
-         "github": "",
-         "live": "",
+         "github": "https://github.com/alessandrogorla/alessandrogorla.github.io/tree/789de1af952a29fb71db1732b73961a927477968/Projects/FEA_Harbour_Crane",
+         "live": "https://github.com/alessandrogorla/alessandrogorla.github.io/blob/789de1af952a29fb71db1732b73961a927477968/Projects/FEA_Harbour_Crane/FEACrane.pdf",
          "organization": "Politecnico di Milano "
       },
       {
@@ -109,8 +109,8 @@
             "Trained a 4-layer fully connected Neural Network (ELU activations, MSE loss) to accurately map physical parameters and time variables to the POD coefficients",
             "Achieved an average relative error of just 1.26% on the test set while accelerating the simulation time by a factor of 5200 (from 15.556s to 0.003s)"
          ],
-         "github": "",
-         "live": "",
+         "github": "https://github.com/alessandrogorla/alessandrogorla.github.io/tree/789de1af952a29fb71db1732b73961a927477968/Projects/ROM%20Thermal%20Refrigerator",
+         "live": "https://github.com/alessandrogorla/alessandrogorla.github.io/blob/789de1af952a29fb71db1732b73961a927477968/Projects/ROM%20Thermal%20Refrigerator/Assignment2.ipynb",
          "organization": "Politecnico di Milano "
    },
    {
@@ -131,8 +131,8 @@
             "Achieved a massive computational speedup, reducing simulation evaluation time from 2060.56 milliseconds to 1.41 milliseconds while maintaining a relative error of less than 0.001%",
             "Utilized the ROM to map the parameter space and determined that the maximum beam deformation occurs at lambda = 0.5 when nu = 1, since lower Lame coefficients correspond to a reduced Young's modulus"
          ],
-         "github": "",
-         "live": "",
+         "github": "https://github.com/alessandrogorla/alessandrogorla.github.io/tree/789de1af952a29fb71db1732b73961a927477968/Projects/ROM%20Linear%20Elasticity",
+         "live": "https://github.com/alessandrogorla/alessandrogorla.github.io/blob/789de1af952a29fb71db1732b73961a927477968/Projects/ROM%20Linear%20Elasticity/Assignment_1.ipynb",
          "organization": "Politecnico di Milano "
    },
    {
@@ -154,8 +154,8 @@
             "Engineered a pneumatic control circuit incorporating a 6V DC air pump, a tube splitter, two 12V 3-way solenoid valves, TIP122G transistors, and 1N4007 rectifier diodes",
             "Implemented software logic to toggle the solenoid valve states at 100 ms intervals upon obstacle detection, enabling periodic inflation and deflation to provide vibrational haptic feedback while preventing actuator overinflation"
          ],
-         "github": "",
-         "live": "",
+         "github": "https://github.com/alessandrogorla/alessandrogorla.github.io/tree/789de1af952a29fb71db1732b73961a927477968/Projects/Blind%20Assist%20Device",
+         "live": "https://github.com/alessandrogorla/alessandrogorla.github.io/blob/789de1af952a29fb71db1732b73961a927477968/Projects/Blind%20Assist%20Device/Course%20project.pdf",
          "organization": "Aarhus University, Denmark"
    },
    {
@@ -177,8 +177,8 @@
             "Utilized the UR3e's built-in joint torque sensors to dynamically verify part pick-up success, implementing an automated safety halt if the expected gravitational load is missing",
             "Incorporated an ultrasonic sensor with an Arduino and Bluetooth module to automate the motor limits based on the gripper's opening distance and enable remote control"
          ],
-         "github": "",
-         "live": "",
+         "github": "https://github.com/alessandrogorla/alessandrogorla.github.io/tree/789de1af952a29fb71db1732b73961a927477968/Projects/Robotic%20Assembly%20of%20a%20Trophy",
+         "live": "https://github.com/alessandrogorla/alessandrogorla.github.io/blob/789de1af952a29fb71db1732b73961a927477968/Projects/Robotic%20Assembly%20of%20a%20Trophy/Robotics.pdf",
          "organization": "Aarhus University, Denmark"
    },
    {
@@ -200,8 +200,8 @@
             "Evaluated multiple End-of-Life (EoL) scenarios for carbon fiber composites, comparing environmental impacts across landfill, incineration, mechanical recycling, pyrolysis, fluidized bed, and solvolysis technologies",
             "Translated total CO2 equivalent emissions into health burdens using the Disability-Adjusted Life Year (DALY) metric, calculating 1.44e-6 DALY for aluminium and 9.65e-7 DALY for carbon fiber frames"
          ],
-         "github": "",
-         "live": "",
+         "github": "https://github.com/alessandrogorla/alessandrogorla.github.io/tree/789de1af952a29fb71db1732b73961a927477968/Projects/Life%20Cycle%20Assessment%20of%20Bike%20Frames",
+         "live": "https://github.com/alessandrogorla/alessandrogorla.github.io/blob/789de1af952a29fb71db1732b73961a927477968/Projects/Life%20Cycle%20Assessment%20of%20Bike%20Frames/Lazycaffeineaddicts_final_report.pdf",
          "organization": "Aarhus University, Denmark"
 },
 {
@@ -225,8 +225,8 @@
             "Developed a robust Python software architecture featuring real-time UI updates, cycle counting, and complete sequence adaptability regardless of the helmet size.",
             "Integrated TMFlow Vision Job using color markers for state verification, allowing the robot to automatically detect faults and halt motion sequences to ensure operational safety."
          ],
-         "github": "",
-         "live": "",
+         "github": "https://github.com/alessandrogorla/alessandrogorla.github.io/tree/789de1af952a29fb71db1732b73961a927477968/Projects/End%20effector%20design%20and%20robot%20programming%20for%20fatigue%20tests%20on%20helmets",
+         "live": "https://github.com/alessandrogorla/alessandrogorla.github.io/blob/789de1af952a29fb71db1732b73961a927477968/Projects/End%20effector%20design%20and%20robot%20programming%20for%20fatigue%20tests%20on%20helmets/Final%20presentation.pptx",
          "organization": "Politecnico di Milano"
 },
 {
@@ -250,8 +250,8 @@
             "Applied the Precedence Diagram Method (PDM) in Microsoft Project to sequence tasks, resolve resource overallocations, and adhere to a strict 24-month delivery timeline.",
             "Designed a hybrid risk and opportunity management system to mitigate supplier delays, transfer defect risks, and exploit local workforce availability for cost avoidance."
          ],
-         "github": "",
-         "live": "",
+         "github": "https://github.com/alessandrogorla/alessandrogorla.github.io/tree/789de1af952a29fb71db1732b73961a927477968/Projects/Project%20Management%20for%20the%20construction%20of%20a%20solar%20panel%20energy%20plant",
+         "live": "https://github.com/alessandrogorla/alessandrogorla.github.io/blob/789de1af952a29fb71db1732b73961a927477968/Projects/Project%20Management%20for%20the%20construction%20of%20a%20solar%20panel%20energy%20plant/Report.pdf",
          "organization": "Politecnico di Milano"
 },
 {
@@ -272,8 +272,8 @@
             "Developed a closed-loop perception-language-action feedback system that dynamically updates the scene description and re-evaluates affordance scores after every executed robotic action.",
             "Integrated the CLIPort framework with GPT-based scoring to accurately perform multi-step pick-and-place manipulation tasks driven by semantic reasoning and physical feasibility."
          ],
-         "github": "",
-         "live": "",
+         "github": "https://github.com/alessandrogorla/alessandrogorla.github.io/tree/789de1af952a29fb71db1732b73961a927477968/Projects/SayCan%20LLM",
+         "live": "https://github.com/alessandrogorla/alessandrogorla.github.io/blob/789de1af952a29fb71db1732b73961a927477968/Projects/SayCan%20LLM/Report_SayCan_Project.pdf",
          "organization": "Politecnico di Milano"
 },
 {
@@ -294,8 +294,8 @@
             "Evaluated the impact of active actuator saturation by imposing realistic maximum torque limits (e.g., 87 Nm and 12 Nm), analyzing the resulting tracking errors and initial velocity overshoot phenomena.",
             "Compared a high-dimensional one-shot optimization approach against a sequential cascade method, concluding that one-shot yields superior global accuracy by accounting for inter-joint dynamic coupling."
          ],
-         "github": "",
-         "live": "",
+         "github": "https://github.com/alessandrogorla/alessandrogorla.github.io/tree/789de1af952a29fb71db1732b73961a927477968/Projects/Bayesian%20Optimization%20for%20control%20parameters%20of%20a%20robotic%20arm",
+         "live": "https://github.com/alessandrogorla/alessandrogorla.github.io/blob/789de1af952a29fb71db1732b73961a927477968/Projects/Bayesian%20Optimization%20for%20control%20parameters%20of%20a%20robotic%20arm/Report_Bayesian_Optimization_Project.pdf",
          "organization": "Politecnico di Milano"
 },
 {
@@ -317,8 +317,8 @@
             "Implemented a custom Cartesian impedance-admittance controller that seamlessly merges predictive diffusion increments with reactive force compliance, ensuring safe and stable physical interaction.",
             "Validated the framework through offline metrics, MuJoCo simulations, and real-robot experiments with a Franka Panda, achieving a 37.6% reduction in global RMS interaction force compared to a purely reactive admittance baseline."
          ],
-         "github": "",
-         "live": "",
+         "github": "https://github.com/alessandrogorla/alessandrogorla.github.io/tree/789de1af952a29fb71db1732b73961a927477968/Projects/Master%20Thesis",
+         "live": "https://github.com/alessandrogorla/alessandrogorla.github.io/blob/789de1af952a29fb71db1732b73961a927477968/Projects/Master%20Thesis/Tesi_Ale_completa.pdf",
          "organization": "Politecnico di Milano"
 }
 
