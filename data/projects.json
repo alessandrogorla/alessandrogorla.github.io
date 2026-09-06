@@ -239,9 +239,9 @@
             "Microsoft Excel",
             "Bottom-Up Cost Estimation",
 
-            "Work Breakdown Structure (WBS) Development",
+            "Work Breakdown Structure",
             "Risk and Opportunity Management",
-            "Earned Value Management (EVM)"
+            "Earned Value Management"
          ],
          "features": [
             "Managed the full EPC realization of a 40MW solar PV plant across 78 hectares, coordinating site preparation, electrical wiring, and final grid synchronization.",
@@ -254,5 +254,6 @@
          "live": "",
          "organization": "Politecnico di Milano"
 }
+
    ]
 }
