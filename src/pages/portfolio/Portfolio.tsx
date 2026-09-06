@@ -6,7 +6,6 @@ import PageSection from "@components/layout/PageSection";
 import { parseDate } from "./portfolioConstants";
 import type { ProjectWithCategory } from "./portfolioConstants";
 import ProjectGrid from "./ProjectGrid";
-import OpenSourceBanner from "./OpenSourceBanner";
 import ProjectModal from "./ProjectModal";
 
 const Portfolio = () => {
