@@ -14,10 +14,7 @@ const Portfolio = () => {
    const { isMobile } = useBreakpoint();
 
    const projects = useMemo(
-      () =>
-         [...getProjects()].sort(
-         (a, b) => parseDate(b.date).getTime() - parseDate(a.date).getTime(),
-         ),
+      () => [...getProjects()].reverse(),
       [],
    );
 

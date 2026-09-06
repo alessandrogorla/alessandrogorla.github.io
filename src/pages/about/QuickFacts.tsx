@@ -49,7 +49,7 @@ const QuickFacts = ({ isMobile }: { isMobile: boolean }) => {
             Icon: Languages,
             label: "Languages",
             value: getLanguages()
-               .map((l) => l.name)
+               .map((l) => `${l.name} (${l.level})`)
                .join(", "),
          },
       ];
