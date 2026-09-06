@@ -138,6 +138,21 @@ const HeroContent = () => {
                aria-haspopup="dialog"
             >
                <FileText size={15} />
+               View Transcript of Records
+            </motion.button>
+            <motion.button
+               onClick={() => setCvOpen(true)}
+               className="btn-outline text-sm font-semibold"
+               style={{
+                  display: "inline-flex",
+                  alignItems: "center",
+                  gap: 8,
+               }}
+               whileHover={{ scale: 1.04 }}
+               whileTap={{ scale: 0.97 }}
+               aria-haspopup="dialog"
+            >
+               <FileText size={15} />
                View CV
             </motion.button>
             <motion.a
