@@ -1,0 +1,34 @@
+{
+   "contact_options": [
+      {
+         "id": 1,
+         "icon": "MdOutlineEmail",
+         "title": "Email Me",
+         "value": "agorla@live.com",
+         "link": "mailto:agorla@live.com",
+         "message": "Send a Mail"
+      },
+      {
+         "id": 2,
+         "icon": "BsLinkedin",
+         "title": "LinkedIn",
+         "value": "alessandro-gorla-5480ba141",
+         "link": "https://www.linkedin.com/in/alessandro-gorla-5480ba141",
+         "message": "Connect"
+      },
+      {
+         "id": 3,
+         "icon": "FiGithub",
+         "title": "GitHub",
+         "value": "alessandrogorla",
+         "link": "https://github.com/alessandrogorla",
+         "message": "Follow"
+      }
+   ],
+   "email_config": {
+      "service_id": "service_lyt547p",
+      "template_id": "template_yz438w6",
+      "public_key": "PAcL61ygLI8WYG16R",
+      "validation_pattern": "^[\\w.%+-]+@[\\w.-]+\\.[a-zA-Z]{2,}$"
+   }
+}

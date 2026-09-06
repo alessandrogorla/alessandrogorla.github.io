@@ -1,0 +1,739 @@
+@import "tailwindcss";
+
+/* ===== Minimal Dark Theme (akobir-style) =====
+   Near-black canvas, flat surfaces, one blue accent, white pill CTAs.
+   No glassmorphism, no gradient text, no glow. */
+@theme {
+   --font-sans: "Inter Variable", "Inter", system-ui, -apple-system, sans-serif;
+   --font-mono:
+      "JetBrains Mono Variable", "JetBrains Mono", ui-monospace, monospace;
+   /* Display face for the hero headline + section titles ONLY -- body stays
+      Inter. This heading/body pairing is what keeps the big type from reading
+      as a Tailwind default. */
+   --font-display:
+      "Bricolage Grotesque Variable", "Bricolage Grotesque", "Inter Variable",
+      system-ui, sans-serif;
+
+   --color-bg-primary: #0b1012;
+   --color-bg-secondary: #0e1418;
+   --color-bg-tertiary: #10161a;
+   --color-bg-card: #0e1417;
+   --color-bg-card-hover: #131a1e;
+   --color-border: #1d2529;
+   --color-border-hover: #2b353a;
+   --color-border-glow: #2563eb;
+
+   --color-text-primary: #f4f6f7;
+   --color-text-secondary: #9ca9b0;
+   --color-text-muted: #76838b;
+
+   --color-accent-blue: #2563eb;
+   --color-accent-cyan: #60a5fa;
+   --color-accent-purple: #38bdf8;
+   --color-accent-green: #22c55e;
+   --color-accent-amber: #f59e0b;
+   --color-accent-pink: #38bdf8;
+
+   --color-glow-cyan: rgb(96 165 250 / 0.15);
+   --color-glow-purple: rgb(56 189 248 / 0.15);
+}
+
+/* RGB channel tokens -- use with rgb(var(--ch-*) / <alpha>) */
+:root {
+   --ch-cyan: 34 211 238;
+   --ch-blue: 37 99 235;
+   --ch-purple: 96 165 250;
+   --ch-pink: 56 189 248;
+   --ch-amber: 245 158 11;
+   --ch-green: 34 197 94;
+   --ch-red: 239 68 68;
+   --ch-indigo: 96 165 250;
+   --ch-white: 255 255 255;
+   --ch-black: 0 0 0;
+   --ch-bg: 11 16 18;
+   --ch-bg-sec: 14 20 24;
+   --ch-glass: 16 22 26;
+   --ch-glass-h: 22 30 35;
+   --ch-bg-mid: 13 18 22;
+   --ch-cyan-light: 103 232 249;
+}
+
+/* ===== Base Reset ===== */
+*,
+*::before,
+*::after {
+   margin: 0;
+   padding: 0;
+   box-sizing: border-box;
+}
+
+html {
+   /* Lenis owns smooth scrolling; CSS smooth here would double-drive programmatic
+      scrolls (scrollIntoView) and fight it. Keep auto. */
+   scroll-behavior: auto;
+   /* Below-fold reveal variants park elements at translateX(+-120px) until they
+      animate in; clip so that never widens the page on phones. */
+   overflow-x: clip;
+   -webkit-font-smoothing: antialiased;
+   -moz-osx-font-smoothing: grayscale;
+   /* Always reserve the scrollbar gutter so opening a modal (which locks body
+      scroll) doesn't shift the page wider. */
+   scrollbar-gutter: stable;
+}
+
+body {
+   font-family: var(--font-sans);
+   background-color: var(--color-bg-primary);
+   color: var(--color-text-primary);
+   line-height: 1.7;
+   overflow-x: hidden;
+   /* Stop iOS rubber-band / Android scroll-chaining from fighting Lenis at the
+      page extremes. */
+   overscroll-behavior-y: none;
+}
+
+/* Scrollbar */
+::-webkit-scrollbar {
+   width: 6px;
+}
+
+::-webkit-scrollbar-track {
+   background: rgb(var(--ch-bg) / 0.8);
+}
+
+::-webkit-scrollbar-thumb {
+   background: rgb(var(--ch-white) / 0.15);
+   border-radius: 3px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+   background: rgb(var(--ch-white) / 0.3);
+}
+
+/* Selection */
+::selection {
+   background-color: #1d4ed8;
+   color: #fff;
+}
+
+/* Focus */
+:focus-visible {
+   outline: 2px solid rgb(var(--ch-blue) / 0.6);
+   outline-offset: 2px;
+}
+
+/* Skip to content -- visible only when focused (WCAG 2.4.1 Bypass Blocks) */
+.skip-link {
+   position: fixed;
+   top: 8px;
+   left: 8px;
+   z-index: 1000;
+   padding: 10px 18px;
+   border-radius: 8px;
+   background: var(--color-bg-card);
+   color: var(--color-text-primary);
+   border: 1px solid rgb(var(--ch-white) / 0.12);
+   font-size: 0.875rem;
+   font-weight: 600;
+   transform: translateY(-150%);
+   transition: transform 0.2s ease;
+}
+
+.skip-link:focus {
+   transform: translateY(0);
+}
+
+/* Links */
+a {
+   color: inherit;
+   text-decoration: none;
+}
+
+/* Images */
+img {
+   max-width: 100%;
+   height: auto;
+   display: block;
+}
+
+/* ===== Keyframes ===== */
+@keyframes glow-pulse {
+   0%,
+   100% {
+      opacity: 0.4;
+   }
+   50% {
+      opacity: 1;
+   }
+}
+
+@keyframes shimmer {
+   0% {
+      background-position: -200% 0;
+   }
+   100% {
+      background-position: 200% 0;
+   }
+}
+
+@keyframes float {
+   0%,
+   100% {
+      transform: translateY(0px);
+   }
+   50% {
+      transform: translateY(-12px);
+   }
+}
+
+@keyframes blink {
+   0%,
+   100% {
+      opacity: 1;
+   }
+   50% {
+      opacity: 0;
+   }
+}
+
+@keyframes scroll-hint {
+   0% {
+      opacity: 0;
+      transform: translateY(0);
+   }
+   30% {
+      opacity: 1;
+   }
+   100% {
+      opacity: 0;
+      transform: translateY(12px);
+   }
+}
+
+@keyframes gradient-shift {
+   0% {
+      background-position: 0% 50%;
+   }
+   50% {
+      background-position: 100% 50%;
+   }
+   100% {
+      background-position: 0% 50%;
+   }
+}
+
+@keyframes border-glow {
+   0%,
+   100% {
+      border-color: rgb(var(--ch-white) / 0.08);
+   }
+   50% {
+      border-color: rgb(var(--ch-white) / 0.2);
+   }
+}
+
+@keyframes spin {
+   to {
+      transform: rotate(360deg);
+   }
+}
+
+@keyframes ring-pulse {
+   0%,
+   100% {
+      transform: scale(1);
+      opacity: 0.3;
+   }
+   50% {
+      transform: scale(1.15);
+      opacity: 0.6;
+   }
+}
+
+/* ===== Animation Utilities ===== */
+.animate-glow-pulse {
+   animation: glow-pulse 2s ease-in-out infinite;
+}
+
+.animate-shimmer {
+   background-size: 200% 100%;
+   animation: shimmer 2s linear infinite;
+}
+
+.animate-float {
+   animation: float 4s ease-in-out infinite;
+}
+
+.animate-blink {
+   animation: blink 1s step-end infinite;
+}
+
+.animate-scroll-hint {
+   animation: scroll-hint 1.8s ease-in-out infinite;
+}
+
+.animate-gradient-shift {
+   background-size: 200% 200%;
+   animation: gradient-shift 4s ease infinite;
+}
+
+/* ===== Dot Texture (hero halftone backdrop) ===== */
+.grid-bg {
+   background-image: radial-gradient(
+      rgb(var(--ch-white) / 0.05) 1px,
+      transparent 1px
+   );
+   background-size: 22px 22px;
+   /* Fade the dots toward the edges so the texture reads as a spotlight. */
+   mask-image: radial-gradient(
+      ellipse 70% 60% at 50% 40%,
+      black 30%,
+      transparent 75%
+   );
+   -webkit-mask-image: radial-gradient(
+      ellipse 70% 60% at 50% 40%,
+      black 30%,
+      transparent 75%
+   );
+}
+
+/* ===== Display Headings (Bricolage Grotesque) ===== */
+.display-heading {
+   font-family: var(--font-display);
+   font-weight: 800;
+   letter-spacing: -0.03em;
+}
+
+/* ===== Solid Accent Text (gradient-text kept as compat alias) ===== */
+.gradient-text {
+   color: var(--color-text-primary);
+}
+
+.gradient-text-vivid {
+   color: var(--color-text-primary);
+}
+
+/* ===== Glow classes neutralized (compat aliases -- flat style has no glow) ===== */
+.glow-cyan,
+.glow-purple,
+.glow-amber {
+   box-shadow: none;
+}
+
+.glow-cyan-text {
+   text-shadow: none;
+}
+
+/* ===== Flat Card (was glass-card) ===== */
+.glass-card {
+   background: var(--color-bg-card);
+   border: 1px solid rgb(var(--ch-white) / 0.06);
+   border-radius: 20px;
+   transition:
+      background 0.3s cubic-bezier(0.4, 0, 0.2, 1),
+      border-color 0.3s cubic-bezier(0.4, 0, 0.2, 1),
+      transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.glass-card:hover {
+   border-color: rgb(var(--ch-white) / 0.14);
+   background: var(--color-bg-card-hover);
+   transform: translateY(-2px);
+}
+
+/* ===== Section Divider ===== */
+.section-divider {
+   height: 1px;
+   background: rgb(var(--ch-white) / 0.06);
+}
+
+/* ===== Project cards ===== */
+/* Screenshot zooms subtly when the card is hovered. */
+.project-cover-img {
+   transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.project-card:hover .project-cover-img {
+   transform: scale(1.045);
+}
+
+.line-clamp-3 {
+   display: -webkit-box;
+   -webkit-line-clamp: 3;
+   line-clamp: 3;
+   -webkit-box-orient: vertical;
+   overflow: hidden;
+}
+
+/* ===== Dashed Category Rule (tech-stack separators) ===== */
+.dashed-rule {
+   display: flex;
+   align-items: center;
+   gap: 16px;
+   color: var(--color-text-muted);
+   font-size: 12px;
+   font-weight: 600;
+   letter-spacing: 0.2em;
+   text-transform: uppercase;
+}
+
+.dashed-rule::before,
+.dashed-rule::after {
+   content: "";
+   flex: 1;
+   border-top: 1px dashed rgb(var(--ch-white) / 0.12);
+}
+
+/* ===== Section Alternating Backgrounds (flattened -- one canvas) ===== */
+.section-dark,
+.section-darker {
+   background: transparent;
+}
+
+/* ===== Buttons ===== */
+.btn-primary {
+   background: var(--color-accent-blue);
+   color: #fff;
+   font-weight: 600;
+   border: 1px solid transparent;
+   border-radius: 8px;
+   padding: 12px 28px;
+   cursor: pointer;
+   transition:
+      background 0.25s ease,
+      transform 0.25s ease;
+}
+
+.btn-primary:hover {
+   background: #1d4ed8;
+   transform: translateY(-1px);
+}
+
+.btn-outline {
+   background: rgb(var(--ch-white) / 0.08);
+   color: var(--color-text-primary);
+   font-weight: 600;
+   border: 1px solid rgb(var(--ch-white) / 0.06);
+   border-radius: 8px;
+   padding: 12px 28px;
+   cursor: pointer;
+   transition:
+      background 0.25s ease,
+      border-color 0.25s ease,
+      transform 0.25s ease;
+}
+
+.btn-outline:hover {
+   background: rgb(var(--ch-white) / 0.14);
+   border-color: rgb(var(--ch-white) / 0.12);
+   transform: translateY(-1px);
+}
+
+/* White pill CTA (nav "Contact Me", akobir-style) */
+.btn-pill {
+   background: #fff;
+   color: #0b1012;
+   font-weight: 600;
+   border: none;
+   border-radius: 8px;
+   padding: 8px 18px;
+   cursor: pointer;
+   transition:
+      background 0.25s ease,
+      transform 0.25s ease;
+}
+
+.btn-pill:hover {
+   background: #e2e8f0;
+   transform: translateY(-1px);
+}
+
+/* ===== Tag / Badge ===== */
+.tag {
+   display: inline-flex;
+   align-items: center;
+   gap: 4px;
+   font-family: var(--font-mono);
+   font-size: 0.75rem;
+   padding: 4px 10px;
+   border-radius: 6px;
+   transition:
+      background 0.25s ease,
+      border-color 0.25s ease;
+}
+
+.tag-cyan {
+   background: rgb(var(--ch-white) / 0.05);
+   color: var(--color-text-secondary);
+   border: 1px solid rgb(var(--ch-white) / 0.08);
+}
+
+.tag-cyan:hover {
+   background: rgb(var(--ch-white) / 0.1);
+   border-color: rgb(var(--ch-white) / 0.16);
+   color: var(--color-text-primary);
+}
+
+.tag-purple {
+   background: rgb(var(--ch-blue) / 0.12);
+   color: var(--color-accent-purple);
+   border: 1px solid rgb(var(--ch-blue) / 0.2);
+}
+
+.tag-purple:hover {
+   background: rgb(var(--ch-blue) / 0.2);
+   border-color: rgb(var(--ch-blue) / 0.35);
+}
+
+.tag-amber {
+   background: rgb(var(--ch-amber) / 0.1);
+   color: var(--color-accent-amber);
+   border: 1px solid rgb(var(--ch-amber) / 0.15);
+}
+
+.tag-amber:hover {
+   background: rgb(var(--ch-amber) / 0.2);
+   border-color: rgb(var(--ch-amber) / 0.35);
+}
+
+.tag-green {
+   background: rgb(var(--ch-green) / 0.1);
+   color: var(--color-accent-green);
+   border: 1px solid rgb(var(--ch-green) / 0.15);
+}
+
+.tag-green:hover {
+   background: rgb(var(--ch-green) / 0.2);
+   border-color: rgb(var(--ch-green) / 0.35);
+}
+
+/* Section header pill badge (akobir "Tech Stack" / "DevSpark" chip) */
+.badge-pill {
+   display: inline-flex;
+   align-items: center;
+   gap: 8px;
+   font-size: 13px;
+   font-weight: 500;
+   color: var(--color-text-secondary);
+   background: rgb(var(--ch-white) / 0.05);
+   border: 1px solid rgb(var(--ch-white) / 0.08);
+   border-radius: 9999px;
+   padding: 6px 16px;
+}
+
+/* ===== Skill Tag ===== */
+.skill-tag {
+   display: inline-flex;
+   align-items: center;
+   font-size: 0.875rem;
+   font-weight: 500;
+   padding: 8px 16px;
+   border-radius: 8px;
+   background: rgb(var(--ch-white) / 0.04);
+   border: 1px solid rgb(var(--ch-white) / 0.06);
+   color: var(--color-text-secondary);
+   transition:
+      background 0.3s ease,
+      border-color 0.3s ease,
+      color 0.3s ease,
+      transform 0.3s ease;
+   cursor: default;
+}
+
+.skill-tag:hover {
+   border-color: rgb(var(--ch-white) / 0.16);
+   color: var(--color-text-primary);
+   background: rgb(var(--ch-white) / 0.08);
+   transform: translateY(-1px);
+}
+
+/* Tap feedback -- the only motion most touch users see on these chips. */
+.skill-tag:active {
+   transform: scale(0.96);
+}
+
+/* ===== Skill Item (icon + name rows, akobir tech-stack style) ===== */
+.skill-item {
+   transition:
+      transform 0.25s ease,
+      opacity 0.25s ease;
+}
+
+.skill-item:hover {
+   transform: translateY(-2px);
+}
+
+/* ===== Form Input ===== */
+.form-input {
+   width: 100%;
+   background: rgb(var(--ch-white) / 0.04);
+   border: 1px solid rgb(var(--ch-white) / 0.08);
+   border-radius: 10px;
+   padding: 14px 18px;
+   color: var(--color-text-primary);
+   font-size: 0.9375rem;
+   transition:
+      background 0.3s ease,
+      border-color 0.3s ease,
+      box-shadow 0.3s ease;
+   outline: none;
+}
+
+.form-input::placeholder {
+   color: var(--color-text-muted);
+}
+
+.form-input:focus {
+   border-color: rgb(var(--ch-blue) / 0.6);
+   background: rgb(var(--ch-white) / 0.06);
+   box-shadow: 0 0 0 3px rgb(var(--ch-blue) / 0.15);
+}
+
+.form-input--error {
+   border-color: rgb(var(--ch-red) / 0.5);
+}
+
+.form-input--error:focus {
+   border-color: rgb(var(--ch-red) / 0.6);
+   box-shadow: 0 0 0 3px rgb(var(--ch-red) / 0.1);
+}
+
+/* ===== Skeleton Loading ===== */
+.skeleton {
+   background: linear-gradient(
+      90deg,
+      rgb(var(--ch-white) / 0.03) 25%,
+      rgb(var(--ch-white) / 0.06) 50%,
+      rgb(var(--ch-white) / 0.03) 75%
+   );
+   background-size: 200% 100%;
+   animation: shimmer 1.5s ease-in-out infinite;
+   border-radius: 8px;
+}
+
+/* ===== Typewriter cursor ===== */
+.typewriter-cursor {
+   display: inline-block;
+   width: 2px;
+   height: 1.1em;
+   background: var(--color-text-secondary);
+   margin-left: 2px;
+   vertical-align: text-bottom;
+   animation: blink 1s step-end infinite;
+}
+
+/* ===== GitHub Calendar Override ===== */
+.react-activity-calendar {
+   margin: 0 auto;
+}
+
+.react-activity-calendar text {
+   fill: var(--color-text-muted) !important;
+   font-size: 0.75rem;
+}
+
+/* Calendar cell wave-in animation */
+@keyframes cell-pop-in {
+   from {
+      opacity: 0;
+      transform: scale(0);
+   }
+   to {
+      opacity: 1;
+      transform: scale(1);
+   }
+}
+
+.calendar-reveal .react-activity-calendar rect[rx] {
+   --col: 0;
+   animation: cell-pop-in 0.4s cubic-bezier(0.16, 1, 0.3, 1) both;
+   animation-delay: calc(var(--col) * 8ms + 0.6s);
+}
+
+/* Browser mockup border pulse (flat -- border only, no glow) */
+@keyframes mockup-glow {
+   0%,
+   100% {
+      box-shadow: 0 8px 32px rgba(0, 0, 0, 0.4);
+   }
+   50% {
+      box-shadow: 0 8px 32px rgba(0, 0, 0, 0.5);
+   }
+}
+
+/* ===== Footer teal fade (akobir bottom-of-page glow) ===== */
+.footer-fade {
+   background: linear-gradient(
+      180deg,
+      transparent 0%,
+      rgb(13 60 68 / 0.55) 55%,
+      rgb(34 130 143 / 0.75) 100%
+   );
+}
+
+/* ===== Print Resume Mode ===== */
+@media print {
+   body {
+      background: white !important;
+      color: black !important;
+      font-size: 11pt;
+   }
+
+   nav,
+   footer,
+   #contact,
+   #projects,
+   #github,
+   #services,
+   #achievements,
+   .section-divider,
+   canvas,
+   button,
+   .btn-primary,
+   .btn-outline,
+   .btn-pill {
+      display: none !important;
+   }
+
+   * {
+      box-shadow: none !important;
+      text-shadow: none !important;
+      color: black !important;
+      transition: none !important;
+      animation: none !important;
+   }
+
+   .section-dark,
+   .section-darker {
+      background: none !important;
+      page-break-inside: avoid;
+      padding: 20px 0 !important;
+   }
+
+   .glass-card {
+      background: none !important;
+      border: 1px solid #ddd !important;
+   }
+
+   h1,
+   h2,
+   h3,
+   h4,
+   h5,
+   h6 {
+      page-break-after: avoid;
+      color: #111 !important;
+   }
+
+   .skill-tag,
+   .tag {
+      border: 1px solid #ccc !important;
+      color: #333 !important;
+      background: #f9f9f9 !important;
+   }
+
+   .gradient-text,
+   .gradient-text-vivid {
+      color: black !important;
+   }
+}

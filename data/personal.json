@@ -1,0 +1,50 @@
+{
+   "name": "Alessandro Gorla",
+   "title": "Mechanical Engineer ",
+   "location": "Cantù (CO), Italy",
+   "contact": {
+      "email": "agorla@live.com",
+      "linkedin": "alessandro-gorla-5480ba141",
+      "github": "alessandrogorla"
+   },
+   "roles": [
+   ],
+   "about": {
+      "greeting": "👋 Hi, my name is Alessandro Gorla.",
+      "current_role": "💼 Mechanical Engineer just graduated from Politecnico di Milano.",
+      "specialization": "🚀 Mechatronics and Robotics",
+      "education": "🎓 Completed Master in Mechanical Engineering from Politecnico di Milano, with an erasmus experience in Aarhus University (DK)"
+   },
+   "statistics": {
+      "coding_questions": "1600+",
+      "leetcode_rating": "2007",
+      "projects": "44+",
+      "contests": "100+",
+      "industry_certifications": "6",
+      "open_source_prs": "11 merged + 12 open"
+   },
+   "languages": [
+      { "name": "Italian", "level": "Native" },
+      { "name": "English", "level": "Professional Working" },
+      { "name": "Greek", "level": "Basic" },
+      { "name": "Spanish", "level": "Basic" }
+   ],
+   "social_profiles": [
+      {
+         "id": 1,
+         "name": "LinkedIn",
+         "link": "https://www.linkedin.com/in/alessandro-gorla-5480ba141",
+         "icon": "BsLinkedin"
+      },
+      {
+         "id": 2,
+         "name": "GitHub",
+         "link": "https://github.com/alessandrogorla",
+         "icon": "FaGithub"
+      }
+   ],
+   "site": {
+      "counter_namespace": "alessandrogorla-portfolio",
+      "tech_stack": ["React 19", "Vite 8", "Tailwind v4", "Motion", "Lenis"]
+   }
+}

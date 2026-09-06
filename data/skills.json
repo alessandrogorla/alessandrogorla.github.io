@@ -1,0 +1,61 @@
+{
+   "languages": [
+      "Python",
+      "MATLAB",
+      "C++",
+      "Linux",
+      "ROS",
+      "Arduino",
+      "LaTeX"
+   ],
+   "CAD": [
+      "SolidWorks",
+      "Inventor",
+      "CATIA",
+      "SolidEdge"
+   ],
+   "Mechanical": [
+      "Mechanical Design & Engineering Analysis",
+      "Structural & Fatigue Analysis",
+      "Dynamic System Modeling",
+      "Sustainable Product Development"
+   ],
+   "Mechatronics": [
+      "Mechatronic System Integration",
+      "Actuation & Motion Systems",
+      "Feedback Control & System Identification",
+      "Sensor Integration & Measurement",
+      "Electrical Drives & Power Electronics"
+   ],
+   "ai_data": [
+      "Machine Learning & Data-Driven Modeling",
+      "Data Analysis & Experimental Characterization",
+      "Signal Processing",
+      "Diffusion Models in Robotics",
+      "Transformer model",
+      "Computer Vision"
+      
+   ],
+   "Robotics": [
+      "Robot Programming & Manipulation",
+      "Robot Motion Control",
+      "End-effector Design & Grasping",
+      "Human-Robot Interaction"
+   ],
+   "soft_skills": [
+      "Leadership",
+      "Problem Solving",
+      "Communication",
+      "Teamwork",
+      "Critical Thinking",
+      "Adaptability",
+      "Time Management"
+   ],
+   "areas_of_interest": [
+      "Industrial & Collaborative Robotics",
+      "Human Robot Interaction",  
+      "Autonomous Systems",
+      "Mechatronic Systems & Motion Control",
+      "AI & Machine Learning for Engineering"
+   ]
+}

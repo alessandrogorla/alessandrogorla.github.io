@@ -1,0 +1,74 @@
+import type {
+   Achievement,
+   Certification,
+   CodingPlatformStats,
+   CommunityDiscussion,
+   ContactOption,
+   Education,
+   EmailConfig,
+   LearningBadge,
+   OpenSourceContribution,
+   PositionOfResponsibility,
+   ProfessionalExperience,
+   Project,
+   Service,
+   SiteConfig,
+   SkillsData,
+   SocialProfile,
+} from "@/types";
+
+import personalData from "../../data/personal.json";
+import educationData from "../../data/education.json";
+import experienceData from "../../data/experience.json";
+import skillsData from "../../data/skills.json";
+import servicesData from "../../data/services.json";
+import projectsData from "../../data/projects.json";
+import achievementsData from "../../data/achievements.json";
+import contactData from "../../data/contact.json";
+
+// Consolidated data access
+// Individual data getters
+export const getName = (): string => personalData.name;
+export const getTitle = (): string => personalData.title;
+export const getLocation = (): string => personalData.location;
+export const getLanguages = (): { name: string; level: string }[] =>
+   personalData.languages;
+export const getRoles = (): string[] => personalData.roles;
+export const getAbout = (): Record<string, string> => personalData.about;
+export const getStatistics = (): Record<string, string> =>
+   personalData.statistics;
+export const getSocialProfiles = (): SocialProfile[] =>
+   personalData.social_profiles;
+export const getEducation = (): Education[] => educationData as Education[];
+export const getExperience = (): ProfessionalExperience[] =>
+   experienceData.professional_experience as ProfessionalExperience[];
+export const getPositionsOfResponsibility = (): PositionOfResponsibility[] =>
+   (Array.isArray(
+      (experienceData as { positions_of_responsibility?: PositionOfResponsibility[] })
+         .positions_of_responsibility,
+   )
+      ? ((experienceData as { positions_of_responsibility?: PositionOfResponsibility[] })
+           .positions_of_responsibility ?? [])
+      : []) as PositionOfResponsibility[];
+export const getSkills = (): SkillsData => skillsData as unknown as SkillsData;
+export const getServices = (): Service[] => servicesData as Service[];
+export const getProjects = (): Project[] => projectsData.projects as Project[];
+export const getCertifications = (): Certification[] =>
+   achievementsData.certifications as Certification[];
+export const getLearningBadges = (): LearningBadge[] =>
+   (achievementsData.learning_badges || []) as LearningBadge[];
+export const getAchievements = (): Achievement[] =>
+   achievementsData.achievements as Achievement[];
+export const getCodingPlatformStats = (): CodingPlatformStats =>
+   (achievementsData.coding_platform_stats || {}) as CodingPlatformStats;
+export const getOpenSourceContributions = (): OpenSourceContribution[] =>
+   (projectsData.open_source_contributions || []) as OpenSourceContribution[];
+export const getCommunityDiscussions = (): CommunityDiscussion[] =>
+   (projectsData.community_discussions || []) as CommunityDiscussion[];
+export const getContactOptions = (): ContactOption[] =>
+   contactData.contact_options as ContactOption[];
+export const getEmailConfig = (): EmailConfig =>
+   contactData.email_config as EmailConfig;
+export const getGitHubUsername = (): string => personalData.contact.github;
+export const getSiteConfig = (): SiteConfig =>
+   (personalData.site || {}) as SiteConfig;

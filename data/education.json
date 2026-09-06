@@ -1,0 +1,38 @@
+[
+   {
+      "id": 1,
+      "date": "September 2023 - July 2026",
+      "title": "Master of Science in Robotics and Mechatronics, Mechanical Engineering",
+      "institution": "Politecnico di Milano",
+      "institutionType": "University",
+      "location": "Milan, Italy",
+      "cgpa": "110 with honors",
+      "percentage": "",
+      "display_text": "Politecnico di Milano - Milan, Italy",
+      "skills": []
+   },
+   {
+      "id": 2,
+      "date": "August 2024 - January 2025",
+      "title": "Erasmus experience during the Msc",
+      "institution": "Aarhus University",
+      "institutionType": "University",
+      "location": "Aarhus, Denmark",
+      "cgpa": "",
+      "percentage": "",
+      "display_text": "Aarhus University - Aarhus, Denmark",
+      "skills": []
+   },
+   {
+      "id": 3,
+      "date": "September 2020 - September 2023",
+      "title": "Bachelor's degree, Mechanical Engineering",
+      "institution": "Politecnico di Milano",
+      "institutionType": "University",
+      "location": "Milan, Italy",
+      "cgpa": "97/110",
+      "percentage": "",
+      "display_text": "Politecnico di Milano - Milan, Italy",
+      "skills": []
+   }
+]

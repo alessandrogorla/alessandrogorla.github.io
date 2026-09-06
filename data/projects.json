@@ -1,0 +1,210 @@
+{
+   "projects": [
+      {
+         "id": 100,
+         "title": "Bachelor Thesis: Redesign of the Moviplan IC pantograph lifting system",
+         "description": "Redesign project of the pantograph kinematics for the 'Moviplan IC' radiographic table produced by an important Milan-based company. The main objective is to reduce overall costs by 25% through the reduction of limit loads and assembly simplification. The work includes horizontal positioning of the actuator, the addition of compression springs, and the redesign of the crossbeams, with structural verifications in compliance with the CEI EN 60601-1 standard.",
+         "date": "2023",
+         "tools_tech": [
+            "Matlab",
+            "Finite Element Analysis",
+            "CATIA V5",
+            "Cost Reduction Analysis",
+            "Mechanical Design",
+            "Structural Verification"
+         ],
+         "features": [
+            "Horizontal positioning of the actuator to eliminate the rotational degree of freedom parallel to the rods and reduce the required lifting force thanks to a greater lever arm",
+            "Integration of two parallel compression springs to store energy during descent and reduce the maximum static force required from the actuator from 15075 N to 9475 N",
+            "Complete redesign of the crossbeams with the elimination of redundant ones at the upper and lower carriages, and the introduction of a new unified crossbeam for actuator coupling",
+            "Strict compliance with the CEI EN 60601-1 standard for electromedical devices, guaranteed through material safety calculations and finite element simulations (Von Mises)",
+            "Effective economic savings of 20% on the product (equal to €229.11) achieved by both reducing components and streamlining assembly times for a total of 19 minutes saved"
+         ],
+         "github": "",
+         "live": "",
+         "organization": "Politecnico di Milano "
+      },
+      {
+         "id": 101,
+         "title": "Operational Modal Analysis of Tie-Rods",
+         "description": "An Operational Modal Analysis (OMA) project to assess the structural health of tie-rods using the Natural Excitation Technique (NeXT) under ambient vibrations. The analysis differentiated between environmental degradation and critical damage by tracking shifts in modal parameters across healthy and damaged states. The data from four accelerometers was processed using the Frequency Domain Decomposition (FDD) algorithm to extract natural frequencies, mode shapes, and damping ratios.",
+         "date": "2024",
+         "tools_tech": [
+            "Frequency Domain Decomposition (FDD)",
+            "Singular Value Decomposition (SVD)",
+            "Modal Assurance Criterion (MAC)",
+            "Half Peak Power Method",
+            "Signal Processing"
+         ],
+         "features": [
+            "Analyzed a clamped-clamped tie-rod equipped with four accelerometers positioned at 5%, 33.3%, 50%, and 90% of its length",
+            "Processed signal acquisitions across three states: a healthy condition (512 Hz) and two distinct damage conditions (1024 Hz)",
+            "Implemented the FDD algorithm, validating signal stationarity via RMS and computing the Cross Spectral Density (CSD) matrix with a 66% overlap",
+            "Extracted the first four natural frequencies (ranging from 13.71 Hz to 81.08 Hz in the healthy state) and reconstructed mode shapes using SVD applied frequency by frequency",
+            "Computed MAC values to rigorously compare mode shapes across conditions and estimated damping ratios using the Half Peak Power method, establishing a baseline for automated fault detection"
+         ],
+         "github": "",
+         "live": "",
+         "organization": "Politecnico di Milano"
+      },
+      {
+         "id": 102,
+         "title": "Modal Analysis of a Rail Wheel ",
+         "description": "A project focused on identifying the modal parameters of a rail wheel using experimental vibration data. Twelve accelerometers and a dynamo-metric impact hammer were utilized on a symmetrically suspended wheel to generate Frequency Response Functions (FRFs) . A least-square error minimization procedure was then employed to fit numerical FRFs to the experimental data, allowing for the extraction of natural frequencies, modal damping, and the reconstruction of continuous mode shapes using spline interpolation .",
+         "date": "2024 ",
+         "tools_tech": [
+            "Frequency Response Functions (FRFs) ",
+            "Curve Fitting / Best Fitting Procedure ",
+            "Spline Interpolation ",
+            "Vibration Analysis "
+         ],
+         "features": [
+            "Analyzed experimental data from a rail wheel suspended on elastic supports, excited by an axial load from an impact hammer, and measured by twelve accelerometers exploiting structural symmetry ",
+            "Processed the experimental dataset to compute twelve FRFs and their corresponding coherence functions, filtering out initial frequency guesses where coherence suddenly dropped ",
+            "Applied a multi-mode curve fitting method to minimize the least-square error between the experimental FRFs and calculated numerical FRFs ",
+            "Successfully extracted modal parameters, identifying the first two natural frequencies at 667.3 Hz and 1625 Hz, with corresponding modal damping values of 0.008 and 0.006 ",
+            "Reconstructed the first and second axial mode shapes by evaluating the imaginary part of the FRFs at the resonant frequencies, applying spline interpolation to ensure curve continuity "
+         ],
+         "github": "",
+         "live": "",
+         "organization": "Politecnico di Milano "
+      },
+      {
+         "id": 103,
+         "title": "Finite Element Analysis of a Harbour Crane",
+         "description": "A Finite Element Analysis (FEA) project focused on a harbour crane composed of steel beams. The study involved developing a custom FE model to derive natural frequencies and mode shapes, computing Frequency Response Functions (FRFs), and comparing full FE approaches with modal superposition. Finally, the crane's structural response was evaluated under static self-weight and dynamic moving loads to simulate real-world operating conditions.",
+         "date": "2024",
+         "tools_tech": [
+            "Finite Element Analysis (FEA)",
+            "Frequency Response Functions (FRFs)",
+            "Modal Superposition",
+            "Rayleigh Damping"
+         ],
+         "features": [
+            "Developed a custom FE model with element lengths between 6 m and 10 m to ensure operation in the quasi-static region for frequencies up to 8 Hz",
+            "Assembled mass, stiffness, and Rayleigh damping matrices to compute the first three natural frequencies (0.98 Hz, 2.53 Hz, and 3.57 Hz) and their corresponding mode shapes",
+            "Computed and analyzed FRFs relating a vertical input force to both vertical and horizontal displacements, identifying structural resonance peaks and nodes",
+            "Validated the structural analysis by comparing the FRF obtained via the full FE model with a modal superposition approach that successfully approximated the resonance peaks",
+            "Evaluated static response, finding a maximum static deflection of 53.6 mm, and simulated the dynamic time-history response to a 1000 N moving load with a specific velocity profile"
+         ],
+         "github": "",
+         "live": "",
+         "organization": "Politecnico di Milano "
+      },
+      {
+         "id": 104,
+         "title": "Thermal Refrigerator ROM via POD-NN",
+         "description": "An advanced numerical project simulating the unsteady cooling process of a 2D thermal refrigerator using parameter-dependent PDEs (Stokes and heat equations). To overcome the computational burden of the Full Order Model (FOM) for design optimization, a Reduced Order Model (ROM) was developed using Proper Orthogonal Decomposition enhanced by Neural Networks (POD-NN).",
+         "date": "2024",
+         "tools_tech": [
+            "Python",
+            "FEniCS",
+            "Proper Orthogonal Decomposition (POD)",
+            "Neural Networks (POD-NN)",
+            "Singular Value Decomposition (SVD)"
+         ],
+         "features": [
+            "Simulated the thermal convection-diffusion and Stokes equations using the implicit Euler method and FEniCS on a 6561-node uniform triangular mesh over 101 time steps",
+            "Assembled a snapshot matrix from 300 random parameter instances (varying pipe width and thermal conductivities) to capture the system's dynamics",
+            "Applied truncated SVD to extract a POD basis of 10 modes, successfully capturing 99.82% of the system's energy with a minimal projection error of 0.18%",
+            "Trained a 4-layer fully connected Neural Network (ELU activations, MSE loss) to accurately map physical parameters and time variables to the POD coefficients",
+            "Achieved an average relative error of just 1.26% on the test set while accelerating the simulation time by a factor of 5200 (from 15.556s to 0.003s)"
+         ],
+         "github": "",
+         "live": "",
+         "organization": "Politecnico di Milano "
+   },
+   {
+         "id": 105,
+         "title": "Linear Elasticity ROM via POD-Galerkin",
+         "description": "Developed within the Assignment2.ipynb notebook, this numerical project models small deformations of a 3D clamped elastic beam under its own weight. To optimize computational efficiency for parameter exploration, a Reduced Order Model (ROM) was implemented utilizing the POD-Galerkin scheme, allowing for rapid evaluation of varying Lame parameters.",
+         "date": "2024",
+         "tools_tech": [
+            "Python",
+            "FEniCS",
+            "Proper Orthogonal Decomposition (POD)",
+            "Galerkin Projection",
+            "Singular Value Decomposition (SVD)"
+         ],
+         "features": [
+            "Generated a Full Order Model (FOM) snapshot matrix using FEniCS by sampling 100 random Lame elasticity parameter instances (lambda and nu between 0.5 and 2.0)",
+            "Performed truncated Singular Value Decomposition (SVD) to extract 5 POD modes, successfully capturing over 99.99% of the system's energy with an average projection error of 0.00%",
+            "Implemented a highly efficient POD-Galerkin scheme by pre-computing affine parameter-dependent matrices and vectors, enabling rapid online assembly for the ROM",
+            "Achieved a massive computational speedup, reducing simulation evaluation time from 2060.56 milliseconds to 1.41 milliseconds while maintaining a relative error of less than 0.001%",
+            "Utilized the ROM to map the parameter space and determined that the maximum beam deformation occurs at lambda = 0.5 when nu = 1, since lower Lame coefficients correspond to a reduced Young's modulus"
+         ],
+         "github": "",
+         "live": "",
+         "organization": "Politecnico di Milano "
+   },
+   {
+         "id": 106,
+         "title": "Blind Assist Device",
+         "description": "A mechatronics course project aimed at designing and prototyping a cost-effective assistive device to help visually impaired individuals navigate their environments. The system utilizes an Arduino-based controller to detect obstacles via ultrasonic sensors and delivers directional haptic feedback through custom-fabricated pneumatic soft actuators, providing a gentler tactile response compared to traditional electrical vibration motors.",
+         "date": "2025",
+         "tools_tech": [
+            "Arduino Uno",
+            "Ultrasonic Sensors",
+            "Self-fabricated Pneumatic Soft Actuators",
+            "DC Air Pump & Solenoid Valves",
+            "TinkerCad"
+         ],
+         "features": [
+            "Designed a navigation assist device strictly within a 700 Kr budget to improve the autonomy and safety of visually impaired users",
+            "Fabricated custom soft actuators using a 1:1 mixture of Silicone RPRO 10, utilizing a 3D printed mold and a 50°C curing process for 2 hours to ensure uniform solidification and eliminate bubbles",
+            "Programmed an Arduino Uno to evaluate distances ranging from a 20.0 mm minimum to a 1000.0 mm maximum using two independent ultrasonic sensors to distinguish left from right obstacles",
+            "Engineered a pneumatic control circuit incorporating a 6V DC air pump, a tube splitter, two 12V 3-way solenoid valves, TIP122G transistors, and 1N4007 rectifier diodes",
+            "Implemented software logic to toggle the solenoid valve states at 100 ms intervals upon obstacle detection, enabling periodic inflation and deflation to provide vibrational haptic feedback while preventing actuator overinflation"
+         ],
+         "github": "",
+         "live": "",
+         "organization": "Aarhus University, Denmark"
+   },
+   {
+         "id": 107,
+         "title": "Robotic Assembly of Trophy",
+         "description": "A robotics course project focused on automating the assembly of a trophy using a UR3e robotic arm and a custom 3D-printed gripper. The project involves optimal gripper design, kinematic and static modeling, motion planning, and the integration of strain gauges, torque sensors, and ultrasonic sensors for precise and safe automated manipulation.",
+         "date": "2025",
+         "tools_tech": [
+            "UR3e Robotic Arm",
+            "SOLIDWORKS & 3D Printing (PLA)",
+            "Python (RTDE Interface)",
+            "LabVIEW & NI DAQ (NI 9237)",
+            "Arduino & Ultrasonic Sensors"
+         ],
+         "features": [
+            "Designed and 3D-printed a custom robot gripper using SOLIDWORKS and PLA filament, implementing a 4-bar linkage mechanism to ensure straight finger movement during actuation",
+            "Programmed the UR3e robotic arm using the Python RTDE (Real Time Data Exchange) package to perform inverse kinematics, trajectory planning, and part manipulation for the trophy assembly",
+            "Integrated a quarter-bridge strain gauge with a NI 9237 DAQ and LabVIEW to measure the bending moment and validate the theoretical gripping force with a low error margin of 5.81%",
+            "Utilized the UR3e's built-in joint torque sensors to dynamically verify part pick-up success, implementing an automated safety halt if the expected gravitational load is missing",
+            "Incorporated an ultrasonic sensor with an Arduino and Bluetooth module to automate the motor limits based on the gripper's opening distance and enable remote control"
+         ],
+         "github": "",
+         "live": "https://pippo.com",
+         "organization": "Aarhus University, Denmark"
+   },
+   {
+         "id": 108,
+         "title": "Comparative Life Cycle Assessment of Aluminium and Carbon Fiber Bike Frames",
+         "description": "A comparative Life Cycle Assessment (LCA) investigating the cradle-to-grave environmental impacts of aluminium versus carbon fiber bicycle frames. The study evaluates energy consumption and Global Warming Potential (GWP) across raw material extraction, manufacturing, use, and end-of-life (EoL) phases, providing actionable insights for sustainable material selection in the cycling industry.",
+         "date": "2023",
+         "tools_tech": [
+            "Life Cycle Assessment (LCA)",
+            "EcoInvent & GaBi Databases",
+            "Global Warming Potential (GWP) Analysis",
+            "Disability-Adjusted Life Year (DALY) Metric",
+            "Carbon Fiber Reinforced Polymers (CFRP)"
+         ],
+         "features": [
+            "Conducted a comprehensive cradle-to-grave LCA focusing on Primary Energy Demand (PED) and Global Warming Potential (GWP) for bicycle frames",
+            "Determined that aluminium frames have a net energy consumption of 464.26 MJ and a GWP of 102.61 kg CO2 eq per frame, which is heavily mitigated by highly efficient recycling processes",
+            "Found that carbon fiber frames demand more energy overall (622.63 MJ) but generate a lower GWP (85.35 kg CO2 eq) primarily due to reduced emissions during the manufacturing phase",
+            "Evaluated multiple End-of-Life (EoL) scenarios for carbon fiber composites, comparing environmental impacts across landfill, incineration, mechanical recycling, pyrolysis, fluidized bed, and solvolysis technologies",
+            "Translated total CO2 equivalent emissions into health burdens using the Disability-Adjusted Life Year (DALY) metric, calculating 1.44e-6 DALY for aluminium and 9.65e-7 DALY for carbon fiber frames"
+         ],
+         "github": "",
+         "live": "",
+         "organization": "Aarhus University, Denmark"
+}
+   ]
+}

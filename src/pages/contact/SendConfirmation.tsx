@@ -1,0 +1,123 @@
+import { useState, useEffect } from "react";
+import { motion, AnimatePresence } from "motion/react";
+import { CheckCircle } from "lucide-react";
+import { CYAN, TEXT_PRIMARY, TEXT_MUTED } from "@/constants/theme";
+
+interface SendConfirmationProps {
+   onReset: () => void;
+   senderName: string;
+}
+
+const SendConfirmation = ({ onReset, senderName }: SendConfirmationProps) => {
+   const [stage, setStage] = useState<"typing" | "sent">("typing");
+
+   useEffect(() => {
+      const typingTimer = setTimeout(() => setStage("sent"), 1500);
+      return () => clearTimeout(typingTimer);
+   }, []);
+
+   useEffect(() => {
+      const resetTimer = setTimeout(onReset, 4000);
+      return () => clearTimeout(resetTimer);
+   }, [onReset]);
+
+   return (
+      <div
+         className="glass-card"
+         role="status"
+         aria-live="polite"
+         style={{
+            padding: "48px 32px",
+            display: "flex",
+            flexDirection: "column",
+            alignItems: "center",
+            justifyContent: "center",
+            minHeight: 280,
+            textAlign: "center",
+         }}
+      >
+         <AnimatePresence mode="wait">
+            {stage === "typing" ? (
+               <motion.div
+                  key="typing"
+                  initial={{ opacity: 0, y: 10 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  exit={{ opacity: 0, scale: 0.95 }}
+                  transition={{ duration: 0.4 }}
+                  style={{
+                     display: "flex",
+                     gap: 8,
+                     padding: "16px 24px",
+                     borderRadius: 16,
+                     background: "rgb(var(--ch-cyan) / 0.06)",
+                     border: "1px solid rgb(var(--ch-cyan) / 0.15)",
+                  }}
+               >
+                  {[0, 1, 2].map((dot) => (
+                     <motion.div
+                        key={`dot-${dot}`}
+                        animate={{ y: [0, -8, 0] }}
+                        transition={{
+                           duration: 0.7,
+                           repeat: Infinity,
+                           delay: dot * 0.15,
+                           ease: "easeInOut",
+                        }}
+                        style={{
+                           width: 8,
+                           height: 8,
+                           borderRadius: "50%",
+                           background: CYAN,
+                        }}
+                     />
+                  ))}
+               </motion.div>
+            ) : (
+               <motion.div
+                  key="sent"
+                  initial={{ opacity: 0, y: 15 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{
+                     duration: 0.4,
+                     ease: [0.16, 1, 0.3, 1],
+                  }}
+                  style={{
+                     display: "flex",
+                     flexDirection: "column",
+                     alignItems: "center",
+                     gap: 12,
+                  }}
+               >
+                  <motion.div
+                     initial={{ scale: 0 }}
+                     animate={{ scale: 1 }}
+                     transition={{
+                        type: "spring",
+                        stiffness: 200,
+                        damping: 15,
+                     }}
+                  >
+                     <CheckCircle size={48} style={{ color: CYAN }} />
+                  </motion.div>
+                  <h4
+                     style={{
+                        fontSize: 20,
+                        fontWeight: 700,
+                        color: TEXT_PRIMARY,
+                     }}
+                  >
+                     Message sent!
+                  </h4>
+                  {senderName && (
+                     <p style={{ fontSize: 14, color: TEXT_MUTED }}>
+                        Thanks, {senderName}! I'll get back to you soon.
+                     </p>
+                  )}
+               </motion.div>
+            )}
+         </AnimatePresence>
+      </div>
+   );
+};
+
+export default SendConfirmation;
