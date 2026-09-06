@@ -253,6 +253,73 @@
          "github": "",
          "live": "",
          "organization": "Politecnico di Milano"
+},
+{
+         "id": 111,
+         "title": "SayCan for Enhanced LLM-Guided Extended Robot Planning",
+         "description": "An extension of the SayCan framework that combines Large Language Models (LLMs) with robotics to execute complex natural language commands. The project enhances the system through advanced object detection, spatial LLM grounding, and an iterative feedback loop for dynamic plan adjustment in a simulated environment.",
+         "date": "2025",
+         "tools_tech": [
+            "SayCan Framework",
+            "Large Language Models (GPT-4o-mini)",
+            "PyBullet (Physics Simulation)",
+            "ViLD (Zero-shot Object Detection)",
+            "CLIPort (Pick-and-place)"
+         ],
+         "features": [
+            "Expanded the PyBullet simulation environment by introducing custom 3D geometric solids, such as hexagonal and star-shaped prisms, utilizing URDF, OBJ, and MTL formats.",
+            "Implemented spatial LLM grounding by computing real-world Cartesian coordinates from ViLD bounding boxes, enabling the model to resolve complex proximity and spatial sorting instructions.",
+            "Developed a closed-loop perception-language-action feedback system that dynamically updates the scene description and re-evaluates affordance scores after every executed robotic action.",
+            "Integrated the CLIPort framework with GPT-based scoring to accurately perform multi-step pick-and-place manipulation tasks driven by semantic reasoning and physical feasibility."
+         ],
+         "github": "",
+         "live": "",
+         "organization": "Politecnico di Milano"
+},
+{
+         "id": 112,
+         "title": "Bayesian Optimization of Control Parameters for a 7 D.O.F. Manipulator Robot",
+         "description": "A technical study applying Bayesian Optimization (BO) to tune the PID control parameters of a 7-joint industrial robotic manipulator. The project formulates custom cost functions in both joint-space and work-space to balance tracking accuracy, control effort, and motion smoothness while exploring one-shot and cascade optimization architectures.",
+         "date": "2025",
+         "tools_tech": [
+            "Bayesian Optimization (BO)",
+            "PID Controller Tuning",
+            "Kinematics & Dynamics Simulation",
+            "Model-Based Compensation",
+            "Feedback Linearization"
+         ],
+         "features": [
+            "Designed and implemented custom cost functions in both joint-space and work-space, optimizing a weighted sum of normalized position, velocity, and jerk errors along with applied torque penalties.",
+            "Executed a mass parameter estimation phase using BO based on acceleration tracking under open-loop control, significantly improving the fidelity of model-based gravitational and inertial compensation.",
+            "Evaluated the impact of active actuator saturation by imposing realistic maximum torque limits (e.g., 87 Nm and 12 Nm), analyzing the resulting tracking errors and initial velocity overshoot phenomena.",
+            "Compared a high-dimensional one-shot optimization approach against a sequential cascade method, concluding that one-shot yields superior global accuracy by accounting for inter-joint dynamic coupling."
+         ],
+         "github": "",
+         "live": "",
+         "organization": "Politecnico di Milano"
+},
+{
+         "id": 113,
+         "title": "Master's Thesis: Learning Human-Robot Co-Manipulation from Human-Human Demonstrations via Vision-Based Diffusion Policy",
+         "description": "My Master's Thesis in Mechanical Engineering presents a comprehensive framework for physical human-robot collaborative manipulation. The system uses a Transformer-based diffusion policy, trained on human-human demonstrations, to predict adaptive robot trajectories based on real-time visual observations of human motion. By integrating this predictive AI model with a compliant impedance-admittance controller, the robot can proactively anticipate human intentions, adapt dynamically, and safely assist in shared-payload tasks.",
+         "date": "2026",
+         "tools_tech": [
+            "ROS2",
+            "Transformer-based Diffusion Models",
+            "YOLO26-Pose & RGB-D Sensing",
+            "Cartesian Impedance-Admittance Control",
+            "MuJoCo Simulation & Franka Panda Robot"
+         ],
+         "features": [
+            "Developed a real-time vision pipeline utilizing an Intel RealSense RGB-D camera and YOLO26-Pose to extract and project 2D human body keypoints into 3D Cartesian coordinates.",
+            "Designed and trained a Transformer-based diffusion policy on episodic human-human demonstrations to predict future robot trajectories as a sequence of spatial Cartesian increments (deltas).",
+            "Engineered a multi-rate ROS2 architecture combining a 30 Hz high-level receding-horizon prediction node with a 1000 Hz low-level torque-control node.",
+            "Implemented a custom Cartesian impedance-admittance controller that seamlessly merges predictive diffusion increments with reactive force compliance, ensuring safe and stable physical interaction.",
+            "Validated the framework through offline metrics, MuJoCo simulations, and real-robot experiments with a Franka Panda, achieving a 37.6% reduction in global RMS interaction force compared to a purely reactive admittance baseline."
+         ],
+         "github": "",
+         "live": "",
+         "organization": "Politecnico di Milano"
 }
 
    ]

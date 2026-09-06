@@ -28,7 +28,9 @@ import Robotics from "@assets/projects/robotics.jpg";
 import LCA from "@assets/projects/LCA.png";
 import helmet from "@assets/projects/helmet.png";
 import PVP from "@assets/projects/PVP.png";
-
+import SayCan from "@assets/projects/SayCan.png";
+import BO from "@assets/projects/BO.png";
+import MAst from "@assets/projects/MAst.png";
 
 export interface SceneCoverProps {
    tint: string;
@@ -123,6 +125,9 @@ const COVER_BY_ID: Record<number, ProjectCover> = {
    108: { kind: "image", src: LCA }, // Life Cycle Assessment
    109: { kind: "image", src: helmet }, // Helmet Design
    110: { kind: "image", src: PVP }, // PVP Design
+   111: { kind: "image", src: SayCan }, // SayCan
+   112: { kind: "image", src: BO }, // Bayesian Optimization
+   113: { kind: "image", src: MAst }, // Master's Thesis
 };
 
 export const getProjectCover = (
