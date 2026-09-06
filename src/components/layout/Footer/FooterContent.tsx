@@ -206,7 +206,7 @@ const FooterContent = () => {
                      fontFamily: MONO_FONT,
                   }}
                >
-                  Press 0-9 to navigate sections &middot; j/k to scroll
+                   
                </p>
             )}
          </motion.div>
