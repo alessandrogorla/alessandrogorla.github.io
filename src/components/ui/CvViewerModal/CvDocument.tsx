@@ -2,20 +2,25 @@ import { useMemo, useState } from "react";
 import { ExternalLink, Download, ZoomIn, ZoomOut } from "lucide-react";
 import { MONO_FONT, TEXT_MUTED, TEXT_SECONDARY } from "@/constants/theme";
 
-const BASE = import.meta.env.BASE_URL;
-const CV_URL = `${BASE}cv_ALE.pdf`;
-
 const ZOOM_STEPS = [0.75, 1, 1.25, 1.5];
 
 interface CvDocumentProps {
    isMobile: boolean;
+   fileUrl: string | null; // <-- Riceve l'URL dinamico
 }
 
-const CvDocument = ({ isMobile }: CvDocumentProps) => {
+const CvDocument = ({ isMobile, fileUrl }: CvDocumentProps) => {
    const [zoomIdx, setZoomIdx] = useState(1);
 
    const zoom = ZOOM_STEPS[zoomIdx];
    const zoomLabel = useMemo(() => `${Math.round(zoom * 100)}%`, [zoom]);
+
+   // Usa il fileUrl ricevuto, oppure una stringa vuota di fallback se è null
+   const currentUrl = fileUrl || "";
+
+   // Determina il titolo e l'etichetta in base al documento aperto
+   const isTranscript = currentUrl.includes("carrer_certificate_polimi");
+   const docTitle = isTranscript ? "Transcript of Records" : "Curriculum Vitae";
 
    return (
       <div style={{ display: "flex", flexDirection: "column", minHeight: 0 }}>
@@ -78,10 +83,10 @@ const CvDocument = ({ isMobile }: CvDocumentProps) => {
                   <ZoomIn size={14} />
                </button>
                <a
-                  href={CV_URL}
+                  href={currentUrl}
                   target="_blank"
                   rel="noopener noreferrer"
-                  aria-label="Open CV in a new tab"
+                  aria-label="Open document in a new tab"
                   className="btn-outline"
                   style={{
                      display: "inline-flex",
@@ -92,8 +97,9 @@ const CvDocument = ({ isMobile }: CvDocumentProps) => {
                   <ExternalLink size={14} />
                </a>
                <a
-                  href={CV_URL}
-                  aria-label="Download CV"
+                  href={currentUrl}
+                  download
+                  aria-label="Download document"
                   className="btn-primary"
                   style={{
                      display: "inline-flex",
@@ -110,7 +116,7 @@ const CvDocument = ({ isMobile }: CvDocumentProps) => {
             </div>
          </div>
 
-         {/* Pages */}
+         {/* Pages / Viewer */}
          <div
             style={{
                overflow: "auto",
@@ -131,8 +137,8 @@ const CvDocument = ({ isMobile }: CvDocumentProps) => {
                }}
             >
                <iframe
-                  title="Curriculum Vitae"
-                  src={CV_URL}
+                  title={docTitle}
+                  src={currentUrl}
                   style={{
                      width: "100%",
                      height: isMobile ? "72vh" : "78vh",

@@ -6,18 +6,22 @@ import ModalShell from "@components/ui/ModalShell";
 import ModalHeaderShell from "@components/ui/ModalHeaderShell";
 import { CYAN, TEXT_PRIMARY } from "@/constants/theme";
 
-// Kept lazy so the viewer code stays out of the initial bundle; the page
-// images themselves only load when the modal opens.
 const CvDocument = lazy(() => import("./CvDocument"));
 
 interface CvViewerModalProps {
    isOpen: boolean;
    onClose: () => void;
+   fileUrl: string | null;
 }
 
-const CvViewerModal = ({ isOpen, onClose }: CvViewerModalProps) => {
+const CvViewerModal = ({ isOpen, onClose, fileUrl }: CvViewerModalProps) => {
+   if (!isOpen || !fileUrl) return null;
    const { isMobile } = useBreakpoint();
    const dialogRef = useFocusTrap<HTMLDivElement>(isOpen);
+
+   // Riconosce dinamicamente se è il Transcript o il CV in base all'URL
+   const isTranscript = fileUrl.includes("carrer_certificate_polimi"); 
+   const modalTitle = isTranscript ? "Transcript of Records" : "Curriculum Vitae";
 
    const onEsc = useCallback(
       (e: KeyboardEvent) => {
@@ -47,7 +51,7 @@ const CvViewerModal = ({ isOpen, onClose }: CvViewerModalProps) => {
          <ModalHeaderShell
             isMobile={isMobile}
             onClose={onClose}
-            closeLabel="Close CV viewer"
+            closeLabel="Close document viewer"
          >
             <div style={{ display: "flex", alignItems: "center", gap: 8 }}>
                <FileText
@@ -62,7 +66,7 @@ const CvViewerModal = ({ isOpen, onClose }: CvViewerModalProps) => {
                      color: TEXT_PRIMARY,
                   }}
                >
-                  Curriculum Vitae
+                  {modalTitle}
                </h2>
             </div>
          </ModalHeaderShell>
@@ -80,7 +84,8 @@ const CvViewerModal = ({ isOpen, onClose }: CvViewerModalProps) => {
                   />
                }
             >
-               <CvDocument isMobile={isMobile} />
+               {/* QUI PASSIAMO CORRETTAMENTE IL FILE URL AL SOTTO-COMPONENTE */}
+               <CvDocument isMobile={isMobile} fileUrl={fileUrl} />
             </Suspense>
          )}
       </ModalShell>

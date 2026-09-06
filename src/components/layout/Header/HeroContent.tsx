@@ -7,11 +7,15 @@ import { staggerContainer, staggerItem } from "@utils/animations";
 import { CYAN, GREEN, TEXT_SECONDARY } from "@/constants/theme";
 import CvViewerModal from "@components/ui/CvViewerModal/CvViewerModal";
 import HeroSocial from "./HeroSocial";
-const RESUME_URL = `${import.meta.env.BASE_URL}cv_ALE.pdf`;
-
+const CV_URL = `${import.meta.env.BASE_URL}cv_ALE.pdf`;
+const TOR_URL = `${import.meta.env.BASE_URL}carrer_certificate_polimi.pdf`; 
 const HeroContent = () => {
    const [roleIndex, setRoleIndex] = useState(0);
-   const [cvOpen, setCvOpen] = useState(false);
+   // Sostituisci questo:
+   // const [cvOpen, setCvOpen] = useState(false);
+
+   // Con questo:
+   const [openDocument, setOpenDocument] = useState<string | null>(null);
 
    const name = useMemo(() => getName(), []);
    const roles = useMemo(() => getRoles(), []);
@@ -126,7 +130,7 @@ const HeroContent = () => {
                Explore Projects
             </motion.button>
             <motion.button
-               onClick={() => setCvOpen(true)}
+               onClick={() => setOpenDocument(TOR_URL)}
                className="btn-outline text-sm font-semibold"
                style={{
                   display: "inline-flex",
@@ -141,7 +145,7 @@ const HeroContent = () => {
                View Transcript of Records
             </motion.button>
             <motion.button
-               onClick={() => setCvOpen(true)}
+               onClick={() => setOpenDocument(CV_URL)}
                className="btn-outline text-sm font-semibold"
                style={{
                   display: "inline-flex",
@@ -156,7 +160,7 @@ const HeroContent = () => {
                View CV
             </motion.button>
             <motion.a
-               href={RESUME_URL}
+               href={CV_URL}
                download
                className="btn-primary text-sm"
                whileHover={{ scale: 1.04 }}
@@ -169,8 +173,12 @@ const HeroContent = () => {
          {/* Status widget + Social icons */}
          <HeroSocial />
 
-         {/* In-site CV viewer (lazy: pdf.js loads only when opened) */}
-         <CvViewerModal isOpen={cvOpen} onClose={() => setCvOpen(false)} />
+        {/* In-site document viewer (gestisce sia CV che TOR dinamicamente) */}
+         <CvViewerModal 
+            isOpen={openDocument !== null} 
+            onClose={() => setOpenDocument(null)} 
+            fileUrl={openDocument} 
+         />
       </motion.div>
    );
 };
