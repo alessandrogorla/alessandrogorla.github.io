@@ -79,6 +79,8 @@ html {
    /* Always reserve the scrollbar gutter so opening a modal (which locks body
       scroll) doesn't shift the page wider. */
    scrollbar-gutter: stable;
+   /* Keep one-finger vertical panning native on touch devices. */
+   touch-action: pan-y pinch-zoom;
 }
 
 body {
@@ -90,6 +92,7 @@ body {
    /* Stop iOS rubber-band / Android scroll-chaining from fighting Lenis at the
       page extremes. */
    overscroll-behavior-y: none;
+   touch-action: pan-y pinch-zoom;
 }
 
 /* Scrollbar */
