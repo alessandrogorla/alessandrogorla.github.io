@@ -68,19 +68,10 @@
 }
 
 html {
-   /* Lenis owns smooth scrolling; CSS smooth here would double-drive programmatic
-      scrolls (scrollIntoView) and fight it. Keep auto. */
    scroll-behavior: auto;
-   /* Below-fold reveal variants park elements at translateX(+-120px) until they
-      animate in; clip so that never widens the page on phones. */
-   overflow-x: clip;
    -webkit-font-smoothing: antialiased;
    -moz-osx-font-smoothing: grayscale;
-   /* Always reserve the scrollbar gutter so opening a modal (which locks body
-      scroll) doesn't shift the page wider. */
-   scrollbar-gutter: stable;
-   /* Keep one-finger vertical panning native on touch devices. */
-   touch-action: pan-y pinch-zoom;
+   /* RIMOSSI: overflow-x: clip; e scrollbar-gutter: stable; */
 }
 
 body {
@@ -88,13 +79,14 @@ body {
    background-color: var(--color-bg-primary);
    color: var(--color-text-primary);
    line-height: 1.7;
-   overflow-x: hidden;
-   /* Stop iOS rubber-band / Android scroll-chaining from fighting Lenis at the
-      page extremes. */
-   overscroll-behavior-y: none;
-   touch-action: pan-y pinch-zoom;
+   width: 100%;
+   /* RIMOSSI: overflow-x: hidden; e overscroll-behavior-y: none; */
 }
 
+/* Se serve bloccare lo scroll orizzontale, lo facciamo sul contenitore di React (che è sicuro), non sul body */
+#root {
+   overflow-x: hidden;
+}
 /* Scrollbar */
 ::-webkit-scrollbar {
    width: 6px;

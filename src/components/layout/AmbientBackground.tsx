@@ -16,6 +16,7 @@ const AmbientBackground = () => (
          zIndex: -1,
          overflow: "hidden",
          background: "var(--color-bg-primary)",
+         pointerEvents: "none", // <--- AGGIUNGI QUESTA RIGA!
       }}
    >
       {/* Dot lattice */}

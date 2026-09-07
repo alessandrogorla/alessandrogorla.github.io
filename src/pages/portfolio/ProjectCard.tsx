@@ -169,8 +169,8 @@ const ProjectCard = ({ data, index = 0, onOpen }: ProjectCardProps) => {
                   {hasLive && (
                      <ProjectLink
                         href={data.live}
-                        label="Live Demo"
-                        ariaLabel={`View ${data.title} live demo`}
+                        label="Report"
+                        ariaLabel={`View ${data.title} Report`}
                         icon={ExternalLink}
                         accentColor={colors.accent}
                      />

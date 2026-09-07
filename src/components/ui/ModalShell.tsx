@@ -56,7 +56,6 @@ const ModalShell = ({
             >
                <motion.div
                   ref={dialogRef}
-                  data-lenis-prevent-touch
                   initial={{
                      opacity: 0,
                      y: isMobile ? 100 : 50,
@@ -81,8 +80,6 @@ const ModalShell = ({
                      maxWidth: isMobile ? "100%" : 720,
                      maxHeight: isMobile ? "92vh" : "85vh",
                      overflowY: "auto",
-                     WebkitOverflowScrolling: "touch",
-                     touchAction: "pan-y pinch-zoom",
                      // Sheet floats with side gaps now, so square bottom
                      // corners would read as a rendering bug -- round all four.
                      borderRadius: 20,

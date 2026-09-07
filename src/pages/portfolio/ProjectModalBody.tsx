@@ -42,7 +42,7 @@ interface ModalLinkProps {
    ariaLabel: string;
    icon: ComponentType<{ size?: number }>;
    label: string;
-   /** "primary" = solid blue (Live Demo), "outline" = soft white (Source). */
+   /** "primary" = solid blue (Report), "outline" = soft white (Source). */
    kind: "primary" | "outline";
 }
 
@@ -225,9 +225,9 @@ const ProjectModalBody = ({
                {hasLive && (
                   <ModalLink
                      href={project.live}
-                     ariaLabel={`View ${project.title} live demo`}
+                     ariaLabel={`View ${project.title} Report`}
                      icon={ExternalLink}
-                     label="Live Demo"
+                     label="Report"
                      kind="primary"
                   />
                )}
