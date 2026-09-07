@@ -3,7 +3,6 @@ import { getProjects } from "@data/dataLoader";
 import useBreakpoint from "@hooks/useBreakpoint";
 import { MAX_WIDTH } from "@/constants/theme";
 import PageSection from "@components/layout/PageSection";
-import { parseDate } from "./portfolioConstants";
 import type { ProjectWithCategory } from "./portfolioConstants";
 import ProjectGrid from "./ProjectGrid";
 import ProjectModal from "./ProjectModal";

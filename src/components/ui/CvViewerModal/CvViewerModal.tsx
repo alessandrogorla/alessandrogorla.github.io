@@ -15,7 +15,6 @@ interface CvViewerModalProps {
 }
 
 const CvViewerModal = ({ isOpen, onClose, fileUrl }: CvViewerModalProps) => {
-   if (!isOpen || !fileUrl) return null;
    const { isMobile } = useBreakpoint();
    const dialogRef = useFocusTrap<HTMLDivElement>(isOpen);
 
@@ -39,6 +38,9 @@ const CvViewerModal = ({ isOpen, onClose, fileUrl }: CvViewerModalProps) => {
          document.removeEventListener("keydown", onEsc);
       };
    }, [isOpen, onEsc]);
+   
+   if (!isOpen || !fileUrl) return null;
+
 
    return (
       <ModalShell
