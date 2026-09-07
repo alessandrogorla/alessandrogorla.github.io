@@ -174,11 +174,13 @@ const HeroContent = () => {
          <HeroSocial />
 
         {/* In-site document viewer (gestisce sia CV che TOR dinamicamente) */}
-         <CvViewerModal 
-            isOpen={openDocument !== null} 
-            onClose={() => setOpenDocument(null)} 
-            fileUrl={openDocument} 
-         />
+         {openDocument !== null && (
+            <CvViewerModal 
+               isOpen={true} 
+               onClose={() => setOpenDocument(null)} 
+               fileUrl={openDocument} 
+            />
+         )}
       </motion.div>
    );
 };

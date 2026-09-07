@@ -39,7 +39,6 @@ const CvViewerModal = ({ isOpen, onClose, fileUrl }: CvViewerModalProps) => {
       };
    }, [isOpen, onEsc]);
    
-   if (!isOpen || !fileUrl) return null;
 
 
    return (
