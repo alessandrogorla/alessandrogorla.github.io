@@ -4,7 +4,7 @@
       <meta charset="UTF-8" />
       <meta name="viewport" content="width=device-width, initial-scale=1.0" />
       <title>404 | Alessandro Gorla</title>
-      <link rel="icon" href="/portfolio-react/favicon.ico" />
+      <link rel="icon" href="/favicon.ico" />
       <style>
          @import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&family=JetBrains+Mono:wght@500;700&display=swap");
 
@@ -178,7 +178,7 @@
                The page you're looking for doesn't exist or has been moved.
                Let's get you back on track.
             </p>
-            <a href="/portfolio-react/" class="btn">
+            <a href="/" class="btn">
                <svg
                   width="16"
                   height="16"
@@ -199,7 +199,7 @@
 
       <script>
          // If this looks like a SPA route attempt, redirect to main page
-         var base = "/portfolio-react/";
+         var base = "/";
          var path = location.pathname.slice(base.length);
          var isSPARoute = path && !path.includes(".");
          if (isSPARoute && !location.search.includes("stay=1")) {

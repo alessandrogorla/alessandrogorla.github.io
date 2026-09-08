@@ -3,7 +3,7 @@
    "version": "4.2.0",
    "type": "module",
    "private": true,
-   "homepage": "https://alessandrogorla.github.io/portfolio-react/",
+   "homepage": "https://alessandrogorla.github.io",
    "scripts": {
       "dev": "vite",
       "build": "vite build",
@@ -66,12 +66,12 @@
    "description": "A dynamic and interactive React portfolio showcasing professional experience as a DevOps & Cloud Engineer. Features modern JSON-based data architecture, responsive design, and seamless deployment with CI/CD pipelines.",
    "repository": {
       "type": "git",
-      "url": "git+https://github.com/AlessandroGorla/portfolio-react.git"
+      "url": "git+https://github.com/alessandrogorla/alessandrogorla.github.io.git"
    },
    "author": "Alessandro Gorla <alessandro.gorla@example.com>",
    "license": "GPL-3.0",
    "bugs": {
-      "url": "https://github.com/AlessandroGorla/portfolio-react/issues"
+      "url": "https://github.com/alessandrogorla/alessandrogorla.github.io/issues"
    },
    "allowScripts": {
       "esbuild@0.28.2": true
