@@ -1,6 +1,6 @@
 # Alessandro Gorla - Personal Portfolio & Academic Projects
 
-Welcome to the repository for my personal portfolio and academic projects archive.
+Welcome to the repository for my personal portfolio and academic projects archive. 
 
 🌐 **Website Live:** [alessandrogorla.github.io](https://alessandrogorla.github.io)
 
