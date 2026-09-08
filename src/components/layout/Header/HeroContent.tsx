@@ -7,7 +7,7 @@ import { staggerContainer, staggerItem } from "@utils/animations";
 import { CYAN, GREEN, TEXT_SECONDARY } from "@/constants/theme";
 import CvViewerModal from "@components/ui/CvViewerModal/CvViewerModal";
 import HeroSocial from "./HeroSocial";
-const CV_URL = `${import.meta.env.BASE_URL}cv_ALE.pdf`;
+const CV_URL = `${import.meta.env.BASE_URL}Alessandro_Gorla_CV.pdf`;
 const TOR_URL = `${import.meta.env.BASE_URL}carrer_certificate_polimi.pdf`; 
 const HeroContent = () => {
    const [roleIndex, setRoleIndex] = useState(0);

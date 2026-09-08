@@ -7,7 +7,7 @@ import { MONO_FONT, TEXT_MUTED, TEXT_PRIMARY } from "@/constants/theme";
 import useBreakpoint from "@hooks/useBreakpoint";
 import FooterSocial from "./FooterSocial";
 
-const RESUME_URL = `${import.meta.env.BASE_URL}cv_ALE.pdf`;
+const RESUME_URL = `${import.meta.env.BASE_URL}Alessandro_Gorla_CV.pdf`;
 
 const SITE_LINKS: { id: string; label: string }[] = [
    { id: "hero", label: "Home" },
