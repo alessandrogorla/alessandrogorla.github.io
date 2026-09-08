@@ -40,5 +40,4 @@ Here is a brief overview of the included projects:
 
 
 
-(The website was created using the template:
-https://github.com/Sagargupta16/portfolio-react)
+*(The website was created using the template:https://github.com/Sagargupta16/portfolio-react)*
