@@ -1,0 +1,1 @@
+import{s}from"./animations-zFYnK9jX.js";import{F as a,j as e}from"./index-CJGB1Qz2.js";var p=s(),t=({label:o,accent:r=e,size:i=11})=>(0,p.jsx)("span",{style:{fontFamily:a,fontSize:i,padding:"3px 8px",borderRadius:6,background:`${r}10`,color:r,border:`1px solid ${r}20`},children:o});export{t};
