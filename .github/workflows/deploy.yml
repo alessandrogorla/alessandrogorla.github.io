@@ -2,11 +2,13 @@ name: Deploy to GitHub Pages
 
 on:
   push:
-    branches: [ main ] # O "master", a seconda di come si chiama il tuo branch principale
+    branches: [ main ] # o master
 
 jobs:
   build-and-deploy:
     runs-on: ubuntu-latest
+    permissions:
+      contents: write # <-- Fondamentale per dare i permessi al bot
     steps:
       - name: Checkout
         uses: actions/checkout@v4
@@ -14,7 +16,7 @@ jobs:
       - name: Set up Node.js
         uses: actions/setup-node@v4
         with:
-          node-version: 20
+          node-version: 22 # Aggiornato per evitare il warning di Node 20
           cache: 'npm'
 
       - name: Install dependencies
@@ -27,4 +29,4 @@ jobs:
         uses: peaceiris/actions-gh-pages@v3
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
-          publish_dir: ./build # Questa è la cartella che Vite genera per te
+          publish_dir: ./build
